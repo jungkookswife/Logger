@@ -13,3 +13,9 @@ def get_user_input():
                 return n
         except ValueError:
             print("Неверный ввод. Пожалуйста, введите число.")
+
+def generate_random_sequence(n):
+    sequence = list(range(1, n+1))
+    random.shuffle(sequence)
+    return sequence
+
