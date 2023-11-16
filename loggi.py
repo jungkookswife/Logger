@@ -6,13 +6,13 @@ logging.basicConfig(filename='logi_file.log', level=logging.INFO)
 def get_user_input():
     while True:
         try:
-            n = int(input("Введите натуральное число: "))
+            n = int(input("Enter a natural number: "))
             if n <= 0:
-                print("Введите положительное число!")
+                print("Please enter a positive number!")
             else:
                 return n
         except ValueError:
-            print("Неверный ввод. Пожалуйста, введите число.")
+            print("Invalid input. Please enter a valid number.")
 
 def generate_random_sequence(n):
     sequence = list(range(1, n+1))
@@ -23,16 +23,16 @@ def main():
     n = get_user_input()
     sequence = generate_random_sequence(n)
     
-    print("Нажмите клавишу Enter, чтобы вытащить бочонок...")
-    logging.info("Последовательность: " + str(sequence))
+    print("Press any key to draw a barrel...")
+    logging.info("Sequence: " + str(sequence))
     
     for i in range(n):
         input()
         barrel = sequence.pop(0)
-        print("Бочонок ", barrel, " вытащен")
-        logging.info("Бочонок " + str(barrel) + " вытащен")
+        print("Barrel ", barrel, " is drawn")
+        logging.info("Barrel " + str(barrel) + " is drawn")
     
-    print("Все бочонки вытащены!")
+    print("All the barrels have been drawn!")
 
 if __name__ == '__main__':
     main()
