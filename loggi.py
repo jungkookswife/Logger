@@ -19,3 +19,20 @@ def generate_random_sequence(n):
     random.shuffle(sequence)
     return sequence
 
+def main():
+    n = get_user_input()
+    sequence = generate_random_sequence(n)
+    
+    print("Нажмите клавишу Enter, чтобы вытащить бочонок...")
+    logging.info("Последовательность: " + str(sequence))
+    
+    for i in range(n):
+        input()
+        barrel = sequence.pop(0)
+        print("Бочонок ", barrel, " вытащен")
+        logging.info("Бочонок " + str(barrel) + " вытащен")
+    
+    print("Все бочонки вытащены!")
+
+if __name__ == '__main__':
+    main()
